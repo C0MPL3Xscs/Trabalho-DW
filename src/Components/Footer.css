@@ -1,0 +1,24 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+  
+.footer-container p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+  
+
+
