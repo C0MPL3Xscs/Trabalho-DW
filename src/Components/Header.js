@@ -5,13 +5,13 @@ import '../index.css';
 
 function Header() {
   const openSupport = () => {
-    window.open("/support","_self");
+    window.open("/support", "_self");
   }
 
   const openPublicEvents = () => {
-    window.open("/PublicEvents","_self");
+    window.open("/PublicEvents", "_self");
   }
-  
+
 
   return (
     <header>
@@ -25,7 +25,7 @@ function Header() {
       </div>
       <div className="right-buttons">
         <button><img src={userLogo} alt="Right button" /></button>
-      </div>  
+      </div>
     </header>
   );
 }
