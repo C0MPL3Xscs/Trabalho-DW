@@ -72,4 +72,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Trabalho-DW
 TrabalhoDW
+<<<<<<< HEAD
 >>>>>>> 338b64f3259af0a18fd902aa9e2bb9254d4e7015
+=======
+safafafa
+>>>>>>> origin/master

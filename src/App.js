@@ -3,8 +3,8 @@ import Header from './Components/Header.js'
 import MainPage from './Components/InitialPage'
 import SupportPage from './Components/SupportPage'
 import PublicEvents from './Components/PublicEventsPage'
-import Footer from  './Components/Footer'
-import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
+import Footer from './Components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

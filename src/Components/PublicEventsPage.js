@@ -1,14 +1,16 @@
 import React from 'react';
-import Slider from "./ImageSlider"
-import slider1 from "../Assets/Slider1.jpg";
-import slider2 from "../Assets/Slider2.jpg";
-import slider3 from "../Assets/Slider3.jpg";
+import Event from "./Event.js"
 import "./PublicEventsPage.css"
 
 function InitialPage() {
+  const userId = 1;
+
   return (
-    <div>
-      
+    <div className='bigContainer'>
+      <Event id={1} />
+      <Event id={5} />
+
+      <Event id={6} />
     </div>
   );
 }
