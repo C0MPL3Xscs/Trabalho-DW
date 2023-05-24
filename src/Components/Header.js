@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from '../logo.png';
 import userLogo from '../UserLogo.png';
-import '../index.css';
+import './header.css';
+
 
 function Header() {
   const openSupport = () => {

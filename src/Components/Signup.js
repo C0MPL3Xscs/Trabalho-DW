@@ -1,47 +1,101 @@
 import React, { useState } from 'react';
-import logo from '../logo.png';
-import userLogo from '../UserLogo.png';
-import '../index.css';
-import { Link } from 'react-router-dom';
-import { Modal, Button } from 'react-bootstrap';
+import './SignUp.css';
 
-function Header() {
-  const [showModal, setShowModal] = useState(false);
+function SignUp() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [accountCreated, setAccountCreated] = useState(false);
 
-  const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+
+    try {
+      const response = await fetch(`https://localhost:7192/api/users/createUser?name=${email}&email=${email}&password=${password}`);
+      const data = await response.json();
+      console.log(data);
+
+
+      if (data === true) {
+        setAccountCreated(true);
+        setTimeout(() => {
+
+          window.location.href = '/';
+        }, 2000);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
-    <header>
-      <div className="left-buttons">
-        <a href="/">
-          <img src={logo} alt="Home" />
-        </a>
-        <button>Public Events</button>
-        <button onClick={handleShowModal}>Sign Up/Sign In</button>
+    <div className='background'>
+      <div className='container'>
+        <h1>Sign Up</h1>
+        <form onSubmit={handleSubmit}>
+          <div className='form-group'>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              id='email'
+              placeholder='Enter your email'
+              value={email}
+              onChange={handleEmailChange}
+              required
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='password'>Password</label>
+            <input
+              type='password'
+              id='password'
+              placeholder='Enter your password'
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='confirmPassword'>Confirm Password</label>
+            <input
+              type='password'
+              id='confirmPassword'
+              placeholder='Confirm your password'
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
+              required
+            />
+          </div>
+          <button className='button' type='submit'>Sign Up</button>
+        </form>
 
-        <Modal show={showModal} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Sign Up/Sign In</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {/* Insert your sign up/sign in form here */}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleCloseModal}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        {accountCreated && (
+          <div className='popup'>
+            <p>Account created successfully!</p>
+          </div>
+        )}
       </div>
-      <div className="right-buttons">
-        <button><img src={userLogo} alt="Right button" /></button>
-      </div>
-    </header>
+    </div>
   );
 }
 
-export default Header;
+export default SignUp;
