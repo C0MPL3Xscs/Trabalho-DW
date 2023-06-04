@@ -16,4 +16,4 @@ function ProfilePage() {
     );
 }
 
-export ProfilePage;
+export default ProfilePage;
