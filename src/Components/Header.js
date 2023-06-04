@@ -12,6 +12,10 @@ function Header() {
     window.open("/PublicEvents", "_self");
   }
 
+  const openProfilePage = () => {
+    window.open("/ProfilePage", "_self");
+  }
+
 
   return (
     <header>
