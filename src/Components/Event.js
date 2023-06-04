@@ -26,13 +26,13 @@ function Event({ id }) {
     return (
         <div className="events">
             <div className="imagevent">
-                <img className="imag" src="https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg" alt="Event Image" />
+                <img className="imag" src={eventData.image} alt="Event Image" />
             </div>
             <div className="Info">
                 <p className="nomeevent">{eventData.title}</p>
                 <p className="dataevent">{eventData.description}</p>
                 <p className="location">{eventData.location}</p>
-                <p className="location">{eventData.listaParticipants.length + " Participants"}</p>
+                <p className="location">{eventData.listaParticipants.length + " / " + eventData.maxParticipants + " Participants "}</p>
             </div>
         </div>
     );
