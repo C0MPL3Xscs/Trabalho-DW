@@ -1,17 +1,13 @@
-import React from "react";
+import React from 'react';
+import User from "./User.js"
 import "./ProfilePage.css"
 
-
-
 function ProfilePage() {
+    const id = 1;
 
     return (
-        <div className="profile">
-            <img src="profile-pic.jpg" alt="Profile Picture" />
-            <h2>Nome: </h2>
-            <h3>Eventos Criados: </h3>
-            <h4>Eventos em que está a participar: </h4>
-            <h5>Membro desde: </h5>
+        <div className='bigContainer'>
+            <User id={1} />
         </div>
     );
 }
