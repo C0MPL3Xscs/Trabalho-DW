@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SignUp.css';
+import './SignInUp.css';
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -39,7 +39,7 @@ function SignUp() {
         setAccountCreated(true);
         setTimeout(() => {
 
-          window.location.href = '/';
+          window.location.href = '/Login';
         }, 2000);
       }
     } catch (error) {

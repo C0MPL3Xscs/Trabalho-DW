@@ -43,7 +43,13 @@
 
 .slider-nav button:hover {
   opacity: 1;
+  font-size: 51px;
 }
+
+.slider-nav button:active {
+  opacity: 0.4;
+}
+
 
 .slider-nav button.prev {
   left: 0;

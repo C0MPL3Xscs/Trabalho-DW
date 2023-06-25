@@ -35,7 +35,7 @@ function SupportPage() {
                 className={`faq-toggle ${expandedIndex === 0 ? 'expanded' : ''}`}
                 onClick={() => handleToggle(0)}
               >
-                <span className="faq-question">How do I create an account?</span>
+                <span className="faq-question">How do I create an account? ˅</span>
               </button>
               {expandedIndex === 0 && (
                 <div className="faq-answer">Please visit our website and click on the "Sign Up" button.</div>
@@ -46,7 +46,7 @@ function SupportPage() {
                 className={`faq-toggle ${expandedIndex === 1 ? 'expanded' : ''}`}
                 onClick={() => handleToggle(1)}
               >
-                <span className="faq-question">What are the system requirements?</span>
+                <span className="faq-question">What are the system requirements? ˅</span>
               </button>
               {expandedIndex === 1 && (
                 <div className="faq-answer">
@@ -59,7 +59,7 @@ function SupportPage() {
                 className={`faq-toggle ${expandedIndex === 2 ? 'expanded' : ''}`}
                 onClick={() => handleToggle(2)}
               >
-                <span className="faq-question">How do I reset my password?</span>
+                <span className="faq-question">How do I reset my password? ˅</span>
               </button>
               {expandedIndex === 2 && (
                 <div className="faq-answer">
@@ -72,7 +72,7 @@ function SupportPage() {
                 className={`faq-toggle ${expandedIndex === 3 ? 'expanded' : ''}`}
                 onClick={() => handleToggle(3)}
               >
-                <span className="faq-question">Where can I find the documentation?</span>
+                <span className="faq-question">Where can I find the documentation? ˅</span>
               </button>
               {expandedIndex === 3 && (
                 <div className="faq-answer">
@@ -85,7 +85,7 @@ function SupportPage() {
                 className={`faq-toggle ${expandedIndex === 4 ? 'expanded' : ''}`}
                 onClick={() => handleToggle(4)}
               >
-                <span className="faq-question">How can I contact customer support?</span>
+                <span className="faq-question">How can I contact customer support? ˅</span>
               </button>
               {expandedIndex === 4 && (
                 <div className="faq-answer">

@@ -11,6 +11,10 @@ function InitialPage() {
     window.open("/SignUp", "_self");
   }
 
+  const openProfilePage = () => {
+    window.open("/Profile", "_self");
+  }
+
   return (
     <div>
       <div className="slider">
@@ -22,7 +26,7 @@ function InitialPage() {
       </div>
       <div className="information">
         <h2>WAIT NO MORE!<br></br>CREATE YOUR FREE ACCOUNT NOW!</h2>
-        <button className="create-Account" onClick={openSignUp}>SIGN UP</button>
+        <button className="create-Account" onClick={openProfilePage}>SIGN UP</button>
       </div>
     </div>
   );
