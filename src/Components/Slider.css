@@ -1,6 +1,6 @@
 .slider-container {
   width: 100%;
-  height: 600px;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -8,7 +8,7 @@
 .slider-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .slider-image {
@@ -21,7 +21,7 @@
 
 .slider-nav {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
