@@ -16,6 +16,8 @@ function Header() {
 
         document.addEventListener('click', closeDropdown);
 
+        document.addEventListener('scroll', closeDropdown);
+
         return () => {
             document.removeEventListener('click', closeDropdown);
         };
@@ -66,7 +68,6 @@ function Header() {
                             <button className="MenuButton" onClick={openLogIn}>
                                 Log Out
                             </button>
-                            {/* Add other dropdown menu items as needed */}
                         </div>
                     )}
                 </div>

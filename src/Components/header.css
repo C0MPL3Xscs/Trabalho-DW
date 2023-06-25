@@ -20,6 +20,7 @@ body {
     padding: 0 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   }
   
   .left-buttons {
@@ -51,6 +52,11 @@ body {
   }
   
   .dropdown-menu{
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 140px;
     margin-top: 50px;
     background-color: #ffffff;
     border-radius: 20px;
