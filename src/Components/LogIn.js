@@ -31,6 +31,8 @@ function Login() {
 
             if (data === true) {
                 window.location.href = '/';
+                const isLoggedIn = true;
+                localStorage.setItem('isLoggedIn', isLoggedIn.toString());
             } else {
                 setErrorMessage('Invalid email or password.');
             }

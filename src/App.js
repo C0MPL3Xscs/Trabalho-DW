@@ -11,6 +11,7 @@ import Login from './Components/LogIn';
 import Profile from './Components/ProfilePage'
 import EventPage from './Components/EventPage'
 import ForgotPassword from './Components/ForgotPassword'
+import Configurations from './Components/Configurations'
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
+          <Route path="/Configurations" element={<Configurations />} />
+          <Route path="/ProfilePage" element={<Profile />} />
         </Routes>
       </Router>
       <Footer/>
