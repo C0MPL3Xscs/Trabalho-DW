@@ -28,9 +28,8 @@ function Header() {
     };
 
     const openPublicEvents = () => {
-        window.open('/PublicEvents', '_self');
+        window.open('/Events', '_self');
     };
-
 
     const openLogIn = () => {
         window.open('/Login', '_self');
@@ -59,7 +58,7 @@ function Header() {
                             <button className="MenuButton" onClick={openLogIn}>
                                 Log In
                             </button>
-                            <button className="MenuButton" onClick={openLogIn}>
+                            <button className="MenuButton" onClick={openPublicEvents}>
                                 My Events
                             </button>
                             <button className="MenuButton" onClick={openLogIn}>

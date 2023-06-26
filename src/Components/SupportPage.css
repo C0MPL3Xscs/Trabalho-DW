@@ -2,14 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff7d;
+    background-image: url("../BackGround.png");
     font-family: Arial, sans-serif;
   }
   
   .support-content {
+    margin: 50px;
     max-width: 800px;
     padding: 40px;
-    background-color: #ffffff;
+    background-color: #ffffffec;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }

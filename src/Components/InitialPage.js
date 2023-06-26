@@ -15,6 +15,10 @@ function InitialPage() {
     window.open("/Profile", "_self");
   }
 
+  const openEvents = () => {
+    window.open("/Events", "_self");
+  }
+
   return (
     <div>
       <div className="slider">

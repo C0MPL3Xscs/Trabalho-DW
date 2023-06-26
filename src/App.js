@@ -8,6 +8,7 @@ import Footer from './Components/Footer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Components/LogIn';
 import Profile from './Components/ProfilePage'
+import EventPage from './Components/EventPage'
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/support" element={<SupportPage />} />
-          <Route path="/PublicEvents" element={<PublicEvents />} />
+          <Route path="/Events" element={<PublicEvents />} />
+          <Route path="/event/:id" element={<EventPage />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Profile" element={<Profile />} />

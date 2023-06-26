@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FaUser } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 import "./Event.css";
 
 function Event({ id }) {
@@ -10,7 +12,7 @@ function Event({ id }) {
                 const response = await fetch(`https://localhost:7192/api/events/getEvent?id=${id}`);
                 const data = await response.json();
                 setEventData(data);
-                console.log(id)
+                console.log(id);
             } catch (error) {
                 console.error(error);
             }
@@ -24,7 +26,7 @@ function Event({ id }) {
     }
 
     return (
-        <div className="events">
+        <Link to={`/Event/${eventData.id}`} className="events">
             <div className="imagevent">
                 <img className="imag" src={eventData.image} alt="Event Image" />
             </div>
@@ -32,9 +34,12 @@ function Event({ id }) {
                 <p className="nomeevent">{eventData.title}</p>
                 <p className="dataevent">{eventData.description}</p>
                 <p className="location">{eventData.location}</p>
-                <p className="location">{eventData.listaParticipants.length + " / " + eventData.maxParticipants + " Participants "}</p>
+                <p className="location">
+                    {eventData.listaParticipants.length} / {eventData.maxParticipants}{" "}
+                    <FaUser size={14} color="black" />
+                </p>
             </div>
-        </div>
+        </Link>
     );
 }
 
