@@ -33,7 +33,7 @@ function ProfilePage({ id }) {
             <img src="profile-pic.jpg" alt={userData.img} />
             <h2>Nome: {userData.Name} </h2>
             <h3>Eventos Criados: {userData.listaCreated}</h3>
-            <h4>Eventos em que est· a participar: {userData.listaParticipant} </h4>
+            <h4>Eventos em que est√° a participar: {userData.listaParticipant} </h4>
             <h5>Membro desde: {userData.created_at} </h5>
         </div>
     );

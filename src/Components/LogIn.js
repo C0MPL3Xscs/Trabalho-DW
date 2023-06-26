@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './SignInUp.css';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -9,6 +11,10 @@ function Login() {
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
+
+    const openForgotPass = () => {
+        navigate('/ForgotPassword');
+      };
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
@@ -62,6 +68,10 @@ function Login() {
                         />
                     </div>
                     <button className='button' type='submit'>Login</button>
+                    <div>
+                        <br></br>
+                        <button onClick={openForgotPass}>Esqueceu-se da password?</button>
+                    </div>
                 </form>
             </div>
         </div>

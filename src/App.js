@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Header from './Components/Header.js'
 import MainPage from './Components/InitialPage'
@@ -9,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Components/LogIn';
 import Profile from './Components/ProfilePage'
 import EventPage from './Components/EventPage'
+import ForgotPassword from './Components/ForgotPassword'
 
 function App() {
   return (
@@ -23,9 +25,10 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
         </Routes>
       </Router>
-      <Footer />
+      <Footer/>
     </div>
   );
 }
