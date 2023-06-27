@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./ForgotPassword.css"
+import "./SignInUp.css"
 
 function ForgetPass() {
   const [email, setEmail] = useState('');
@@ -30,23 +30,25 @@ function ForgetPass() {
   };
 
   return (
-    <div>
-      <h1>Esqueceu-se da sua password</h1>
-      {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <div className='form-group'>
-            <label htmlFor='email'>Email</label>
-                <input
-                    type='email'
-                    id='email'
-                    placeholder='Enter your email'
-                    value={email}
-                    onChange={handleEmailChange}
-                    required
-                />
-            </div>
-        <button class="btsub" type="submit">Enviar</button>
-      </form>
+    <div class="background">
+        <div class="container">
+            <h1>Esqueceu-se da sua password?</h1>
+            <h2>Insira aqui o seu email para poder recuperar a sua palavra passe</h2>
+            {message && <p>{message}</p>}
+            <form onSubmit={handleSubmit}>
+                <div className='form-group'>
+                        <input
+                            type='email'
+                            id='email'
+                            placeholder='Enter your email'
+                            value={email}
+                            onChange={handleEmailChange}
+                            required
+                        />
+                    </div>
+                <button class="btsub" type="submit">Enviar</button>
+            </form>
+        </div>
     </div>
   );
 }
