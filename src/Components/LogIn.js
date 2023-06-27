@@ -14,7 +14,7 @@ function Login() {
 
     const openForgotPass = () => {
         navigate('/ForgotPassword');
-      };
+    };
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
@@ -68,11 +68,10 @@ function Login() {
                         />
                     </div>
                     <button className='button' type='submit'>Login</button>
-                    <div>
-                        <br></br>
-                        <button onClick={openForgotPass}>Esqueceu-se da password?</button>
-                    </div>
                 </form>
+                <div>
+                    <button onClick={openForgotPass}>Esqueceu-se da password?</button>
+                </div>
             </div>
         </div>
     );
