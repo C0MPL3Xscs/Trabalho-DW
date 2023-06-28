@@ -72,7 +72,8 @@ function Login() {
                     <button className='button' type='submit'>Login</button>
                 </form>
                 <div>
-                    <button onClick={openForgotPass}>Esqueceu-se da password?</button>
+                    <br></br>
+                    <button onClick={openForgotPass}>Forgot your password?</button>
                 </div>
             </div>
         </div>

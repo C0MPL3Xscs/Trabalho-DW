@@ -12,6 +12,7 @@ import Profile from './Components/ProfilePage'
 import EventPage from './Components/EventPage'
 import ForgotPassword from './Components/ForgotPassword'
 import Configurations from './Components/Configurations'
+import Register from './Components/Register'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/Configurations" element={<Configurations />} />
           <Route path="/ProfilePage" element={<Profile />} />
+          <Route path="/Register" element={<Register />} />
         </Routes>
       </Router>
       <Footer/>

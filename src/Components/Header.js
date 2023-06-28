@@ -43,6 +43,10 @@ function Header() {
         window.open('/Events', '_self');
     };
 
+    //const openMyEvents = () => {
+    //    window.open('/MyEvents', '_self');
+    //};
+
     const openLogIn = () => {
         window.open('/Login', '_self');
     };
@@ -54,6 +58,17 @@ function Header() {
     const openProfilePage = () => {
         window.open('/ProfilePage', '_self');
     };
+
+    const openLogout = () => {
+        const isLoggedIn = false;
+        localStorage.setItem('isLoggedIn', isLoggedIn.toString());
+        window.open('/', '_self');
+    };
+
+    const openRegister = () => {
+        window.open('/Register', '_self');
+    };
+    
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
@@ -80,19 +95,27 @@ function Header() {
                                 Log In
                                 </button>
                             )}
+                            {!isLoggedIn && ( // Verifica se o usuário NÃO está logado
+                                <button className="MenuButton" onClick={openRegister}>
+                                Register
+                                </button>
+                            )}
                             {isLoggedIn && (  //Verifica se o usuário está logado
                                 <button className="MenuButton" onClick={openProfilePage}>
                                 Profile
                                 </button>
                             )}
+                            
+                            {isLoggedIn && ( // Verifica se o usuário se está logado
                             <button className="MenuButton" onClick={openPublicEvents}>
                                 My Events
                             </button>
+                            )}
                             <button className="MenuButton" onClick={openConfigs}>
                                 Configurations
                             </button>
                             {isLoggedIn && (  //Verifica se o usuário está logado
-                            <button className="MenuButton" onClick={openLogIn}>
+                            <button className="MenuButton" onClick={openLogout}>
                                 Log Out
                             </button>
                             )}

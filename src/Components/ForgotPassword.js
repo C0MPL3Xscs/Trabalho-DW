@@ -32,8 +32,8 @@ function ForgetPass() {
   return (
     <div class="background">
         <div class="container">
-            <h1>Esqueceu-se da sua password?</h1>
-            <h2>Insira aqui o seu email para poder recuperar a sua palavra passe</h2>
+            <h1>Forgot your password?</h1>
+            <h3>Insert your email here and we will send you a verification</h3>
             {message && <p>{message}</p>}
             <form onSubmit={handleSubmit}>
                 <div className='form-group'>
@@ -46,7 +46,7 @@ function ForgetPass() {
                             required
                         />
                     </div>
-                <button class="btsub" type="submit">Enviar</button>
+                <button class="btsub" type="submit">Send</button>
             </form>
         </div>
     </div>

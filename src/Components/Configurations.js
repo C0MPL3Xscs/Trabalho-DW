@@ -25,11 +25,10 @@ function Configurations(id) {
     }, [id]);
 
     if (!userData) {
-        return <div>Precisa de estar logado na sua conta para poder aceder as configurações.</div>;
+        return <div>You need to be logged in to access configurations.</div>;
     }
 
     const saveSettings = () => {
-        handleNameChange();
         // Implement logic to save settings
         console.log('Settings saved');
     };
@@ -37,10 +36,10 @@ function Configurations(id) {
     return (
         <div class="fundo">
             <div class="cont">
-                <h1>Configurações</h1>
-                <h2>Mudar de Nome</h2>
+                <h1>Configurations</h1>
+                <h2>Change your username</h2>
                 <input
-                    placeholder='Insira o novo nome'
+                    placeholder='Insert new name'
                     value={userData.name}
                     onChange={handleNameChange}
                     required
