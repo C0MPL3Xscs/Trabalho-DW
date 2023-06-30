@@ -27,7 +27,7 @@ function Register() {
     }; 
 
     const openLoginRegister = () => {
-        if (password == confpassword) {
+        if (password === confpassword) {
             handleRegister();
             navigate('/Login');
           } else {
@@ -77,8 +77,8 @@ function Register() {
                 <div className='form-group'>
                         <label htmlFor='Username'>Username</label>
                         <input
-                            type='password'
-                            id='password'
+                            type='username'
+                            id='username'
                             placeholder='Choose a username'
                             value={username}
                             onChange={handleUsernameChange}

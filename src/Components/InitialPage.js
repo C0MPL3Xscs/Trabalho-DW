@@ -7,8 +7,9 @@ import "./MainPage.css"
 
 function InitialPage() {
 
+
   const openSignUp = () => {
-    window.open("/SignUp", "_self");
+    window.open("/Register", "_self");
   }
 
   const openProfilePage = () => {
@@ -30,7 +31,7 @@ function InitialPage() {
       </div>
       <div className="information">
         <h2>WAIT NO MORE!<br></br>CREATE YOUR FREE ACCOUNT NOW!</h2>
-        <button className="create-Account" onClick={openProfilePage}>SIGN UP</button>
+        <button className="create-Account" onClick={openSignUp}>SIGN UP</button>
       </div>
     </div>
   );

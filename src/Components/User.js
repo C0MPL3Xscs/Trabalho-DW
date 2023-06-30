@@ -10,7 +10,7 @@ function ProfilePage({ id }) {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await fetch(`https://localhost:7192/api/events/getUser?id=${id}`);
+                const response = await fetch(`https://localhost:7192/api/users/getUser?id=${id}`);
                 const data = await response.json();
                 setUserData(data);
                 console.log(id)

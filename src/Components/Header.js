@@ -43,9 +43,9 @@ function Header() {
         window.open('/Events', '_self');
     };
 
-    //const openMyEvents = () => {
-    //    window.open('/MyEvents', '_self');
-    //};
+    const openMyEvents = () => {
+        window.open('/MyEvents', '_self');
+    };
 
     const openLogIn = () => {
         window.open('/Login', '_self');
@@ -106,11 +106,11 @@ function Header() {
                                 </button>
                             )}
                             
-                            {isLoggedIn && ( // Verifica se o usuário se está logado
-                            <button className="MenuButton" onClick={openPublicEvents}>
+                           
+                            <button className="MenuButton" onClick={openMyEvents}>
                                 My Events
                             </button>
-                            )}
+                            
                             <button className="MenuButton" onClick={openConfigs}>
                                 Configurations
                             </button>
