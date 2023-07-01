@@ -27,12 +27,17 @@ function Login() {
         try {
             const response = await fetch(`https://localhost:7192/api/users/CheckLogIn?email=${email}&password=${password}`);
             const data = await response.json();
-            console.log(data);
 
-            if (data === true) {
+            console.log(data);
+            console.log(data.loggedIn);
+
+            if (data.loggedIn === true) {
+                // Store the retrieved information in the session
+                sessionStorage.setItem('isLoggedIn', 'true');
+                sessionStorage.setItem('userName', data.user.name);
+                sessionStorage.setItem('userId', data.user.id);
+
                 window.location.href = '/';
-                const isLoggedIn = true;
-                localStorage.setItem('isLoggedIn', isLoggedIn.toString());
             } else {
                 setErrorMessage('Invalid email or password.');
             }
@@ -72,7 +77,7 @@ function Login() {
                     <button className='button' type='submit'>Login</button>
                 </form>
                 <div>
-                    <button onClick={openForgotPass}>Esqueceu-se da password?</button>
+                    <button className='forgotPassword' onClick={openForgotPass}>Forgot your password?</button>
                 </div>
             </div>
         </div>

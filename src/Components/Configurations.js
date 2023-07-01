@@ -1,53 +1,135 @@
 import React, { useEffect, useState } from 'react';
-import "./Configurations.css"
+import "./Configurations.css";
 
+function Configurations() {
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    const userId = sessionStorage.getItem("userId");
 
-function Configurations(id) {
-    const [userData, setUserData] = useState(null);
-
-    const handleNameChange = (e) => {
-        setUserData.name(e.target.value);
-    };
+    const [newName, setNewName] = useState("");
+    const [showConfigurations, setShowConfigurations] = useState(false);
+    const [prevPassword, setPrevPassword] = useState("");
+    const [newPassword, setNewPassword] = useState("");
 
     useEffect(() => {
-        const fetchName = async () => {
-            try {
-                const response = await fetch(`https://localhost:7192/api/events/getUser?id=${id}`);
-                const data = await response.json();
-                setUserData(data);
-                console.log(id)
-            } catch (error) {
-                console.error(error);
+        if (isLoggedIn) {
+            setShowConfigurations(true);
+        }
+    }, [isLoggedIn]);
+
+    const handleNameChange = (e) => {
+        setNewName(e.target.value);
+    };
+
+    const handlePrevPasswordChange = (e) => {
+        setPrevPassword(e.target.value);
+    };
+
+    const handleNewPasswordChange = (e) => {
+        setNewPassword(e.target.value);
+    };
+
+    const changeName = async () => {
+        try {
+            const response = await fetch(`https://localhost:7192/api/users/changeName?id=${userId}&newName=${newName}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                console.log('Username changed successfully');
+                console.log('New Name:', newName);
+            } else {
+                console.log('Failed to change username');
             }
-        };
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
+    };
 
-        fetchName();
-    }, [id]);
+    const changePassword = async () => {
+        try {
+            const response = await fetch(`https://localhost:7192/api/users/changePassword?id=${userId}&newPassword=${newPassword}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-    if (!userData) {
-        return <div>Precisa de estar logado na sua conta para poder aceder as configurações.</div>;
-    }
+            const data = await response.json();
 
-    const saveSettings = () => {
-        handleNameChange();
-        // Implement logic to save settings
-        console.log('Settings saved');
+            if (data.success) {
+                console.log('Password changed successfully');
+            } else {
+                console.log('Failed to change password');
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
+    };
+
+    const checkPassword = async () => {
+        try {
+            const response = await fetch(`https://localhost:7192/api/users/checkPassword?id=${userId}&password=${prevPassword}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const data = await response.json();
+
+            if (data.passwordCorrect) {
+                console.log('Password is correct');
+                changePassword();
+            } else {
+                console.log('Invalid password');
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
     };
 
     return (
-        <div class="fundo">
-            <div class="cont">
-                <h1>Configurações</h1>
-                <h2>Mudar de Nome</h2>
-                <input
-                    placeholder='Insira o novo nome'
-                    value={userData.name}
-                    onChange={handleNameChange}
-                    required
-                />
-                <button onClick={saveSettings}>Save</button>
-            </div>
+        <div className="fundo">
+            {showConfigurations && (
+                <div className="cont">
+                    <h1>SETTINGS</h1>
+                    <h2>Change UserName</h2>
+                    <input
+                        placeholder='Enter new username'
+                        value={newName}
+                        onChange={handleNameChange}
+                        required
+                    />
+                    <button className='buttonSave' onClick={changeName}>Change Name</button>
+
+                    <h2>Change Password</h2>
+                    <input
+                        type="password"
+                        placeholder="Enter previous password"
+                        value={prevPassword}
+                        onChange={handlePrevPasswordChange}
+                        required
+                    /><br></br><br></br>
+                    <input
+                        type="password"
+                        placeholder="Enter new password"
+                        value={newPassword}
+                        onChange={handleNewPasswordChange}
+                        required
+                    />
+                    <button className='buttonSave' onClick={checkPassword}>Change Password</button>
+                </div>
+            )}
+            {!isLoggedIn && (
+                <div>You need to be logged-in to see your settings.</div>
+            )}
         </div>
     );
 }
+
 export default Configurations;

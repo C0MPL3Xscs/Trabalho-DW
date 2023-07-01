@@ -28,12 +28,12 @@ function Header() {
     useEffect(() => {
         // Lógica para verificar se o usuário está logado
         const checkLoginStatus = () => {
-            const userLoggedIn = localStorage.getItem('isLoggedIn');
+            const userLoggedIn = sessionStorage.getItem('isLoggedIn');
             setIsLoggedIn(userLoggedIn === 'true');
         };
-    
+
         checkLoginStatus();
-      }, []);
+    }, []);
 
     const openSupport = () => {
         window.open('/support', '_self');
@@ -59,6 +59,16 @@ function Header() {
         setDropdownOpen(!dropdownOpen);
     };
 
+    const logOUt = () => {
+        sessionStorage.clear();
+        window.open('/', '_self');
+    }
+
+    const createAccount = () => {
+        sessionStorage.clear();
+        window.open('/SignUp', '_self');
+    }
+
     return (
         <header>
             <div className="left-buttons">
@@ -75,26 +85,35 @@ function Header() {
                     </button>
                     {dropdownOpen && (
                         <div className="dropdown-menu">
-                            {!isLoggedIn && ( // Verifica se o usuário NÃO está logado
+                            {!isLoggedIn && (
                                 <button className="MenuButton" onClick={openLogIn}>
-                                Log In
+                                    Log In
                                 </button>
                             )}
-                            {isLoggedIn && (  //Verifica se o usuário está logado
+                            {!isLoggedIn && (
+                                <button className="MenuButton" onClick={createAccount}>
+                                    Create Account
+                                </button>
+                            )}
+                            {isLoggedIn && (
                                 <button className="MenuButton" onClick={openProfilePage}>
-                                Profile
+                                    Profile
                                 </button>
                             )}
-                            <button className="MenuButton" onClick={openPublicEvents}>
-                                My Events
-                            </button>
-                            <button className="MenuButton" onClick={openConfigs}>
-                                Configurations
-                            </button>
-                            {isLoggedIn && (  //Verifica se o usuário está logado
-                            <button className="MenuButton" onClick={openLogIn}>
-                                Log Out
-                            </button>
+                            {isLoggedIn && (
+                                <button className="MenuButton" onClick={openPublicEvents}>
+                                    My Events
+                                </button>
+                            )}
+                            {isLoggedIn && (
+                                <button className="MenuButton" onClick={openConfigs}>
+                                    Configurations
+                                </button>
+                            )}
+                            {isLoggedIn && (
+                                <button className="MenuButton" onClick={logOUt}>
+                                    Log Out
+                                </button>
                             )}
                         </div>
                     )}

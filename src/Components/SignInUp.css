@@ -59,3 +59,15 @@ input {
 .error-message{
   color: #f00606;
 }
+
+.forgotPassword{
+  margin-top: 10px;
+  border: 0px;
+  color: #000000;
+  background-color: #33333300;
+  
+}
+.forgotPassword:hover{
+  color: #585858;
+  cursor: pointer;
+}
