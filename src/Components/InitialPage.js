@@ -7,8 +7,9 @@ import "./MainPage.css"
 
 function InitialPage() {
 
+
   const openSignUp = () => {
-    window.open("/SignUp", "_self");
+    window.open("/Register", "_self");
   }
 
   return (
