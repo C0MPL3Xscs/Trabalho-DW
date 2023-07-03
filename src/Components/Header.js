@@ -43,10 +43,6 @@ function Header() {
         window.open('/Events', '_self');
     };
 
-    const openMyEvents = () => {
-        window.open('/MyEvents', '_self');
-    };
-
     const openLogIn = () => {
         window.open('/Login', '_self');
     };
@@ -58,17 +54,6 @@ function Header() {
     const openProfilePage = () => {
         window.open('/ProfilePage', '_self');
     };
-
-    const openLogout = () => {
-        const isLoggedIn = false;
-        localStorage.setItem('isLoggedIn', isLoggedIn.toString());
-        window.open('/', '_self');
-    };
-
-    const openRegister = () => {
-        window.open('/Register', '_self');
-    };
-
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
@@ -82,6 +67,10 @@ function Header() {
     const createAccount = () => {
         sessionStorage.clear();
         window.open('/SignUp', '_self');
+    }
+
+    const createEvent = () => {
+        window.open('/CreateEvent', '_self');
     }
 
     return (
@@ -116,8 +105,8 @@ function Header() {
                                 </button>
                             )}
                             {isLoggedIn && (
-                                <button className="MenuButton" onClick={openPublicEvents}>
-                                    My Events
+                                <button className="MenuButton" onClick={createEvent}>
+                                    Create Event
                                 </button>
                             )}
                             {isLoggedIn && (

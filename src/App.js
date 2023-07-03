@@ -12,8 +12,7 @@ import Profile from './Components/ProfilePage'
 import EventPage from './Components/EventPage'
 import ForgotPassword from './Components/ForgotPassword'
 import Configurations from './Components/Configurations'
-import Register from './Components/Register'
-import UserEvents from './Components/MyEvents'
+import CreateEvent from './Components/CreateEvent'
 
 function App() {
   return (
@@ -31,11 +30,10 @@ function App() {
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/Configurations" element={<Configurations />} />
           <Route path="/ProfilePage" element={<Profile />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/MyEvents" element={<UserEvents />} />
+          <Route path="/CreateEvent" element={<CreateEvent />} />
         </Routes>
       </Router>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

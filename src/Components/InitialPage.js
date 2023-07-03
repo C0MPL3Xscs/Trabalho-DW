@@ -7,9 +7,15 @@ import "./MainPage.css"
 
 function InitialPage() {
 
+  const userLoggedIn = sessionStorage.getItem('isLoggedIn');
 
   const openSignUp = () => {
-    window.open("/Register", "_self");
+    if (!userLoggedIn) {
+      window.open("/SignUp", "_self");
+    } else {
+      window.open("/Profile", "_self");
+    }
+
   }
 
   return (
