@@ -12,7 +12,7 @@ function Event({ id }) {
             try {
                 const response = await fetch(`https://localhost:7192/api/events/getEvent?id=${id}`);
                 const data = await response.json();
-                setEventData(data.result.eventData); // Update to access the eventData property from the response
+                setEventData(data.result.eventData);
                 setData(data.result.participants);
             } catch (error) {
                 console.error(error);

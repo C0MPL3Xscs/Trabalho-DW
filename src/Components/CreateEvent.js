@@ -36,6 +36,7 @@ function CreateEvent() {
 
     const handleEventImageURLChange = (e) => {
         setEventImageURL(e.target.value);
+        console.log(userId);
     };
 
     const handleMaxParticipantsChange = (e) => {
@@ -49,25 +50,13 @@ function CreateEvent() {
 
     const createEvent = async () => {
         try {
-            // Construct the endpoint URL with the event details as query parameters
-            const url = `https://localhost:7192/api/events/createEvent?id=${us}&eventName=${encodeURIComponent(eventName)}&eventDate=${encodeURIComponent(eventDate)}&eventLocation=${encodeURIComponent(eventLocation)}&endDate=${encodeURIComponent(eventEndDate)}&eventDesc=${encodeURIComponent(eventDescription)}&imgURL=${encodeURIComponent(eventImageURL)}&isPrivate=${eventIsPrivate}&maxParticipants=${encodeURIComponent(maxParticipants)}`;
-
-            // Make a GET request to the constructed URL
+            const url = `https://localhost:7192/api/events/createEvent?id=${parseInt(userId)}&eventName=${eventName}&eventDate=${eventDate}&eventLocation=${eventLocation}&endDate=${eventEndDate}&eventDesc=${eventDescription}&imgURL=${eventImageURL}&isPrivate=${eventIsPrivate}&maxParticipants=${parseInt(maxParticipants)}`;
             const response = await fetch(url);
 
             if (response.ok) {
                 const data = await response.json();
 
                 if (data.success) {
-                    console.log('Event created successfully');
-                    console.log('Event Name:', eventName);
-                    console.log('Event Date:', eventDate);
-                    console.log('Event Location:', eventLocation);
-                    console.log('Event End Date:', eventEndDate);
-                    console.log('Event Description:', eventDescription);
-                    console.log('Event Image URL:', eventImageURL);
-                    console.log('Event Is Private:', eventIsPrivate);
-                    console.log('Maximum Participants:', maxParticipants);
 
                     setTimeout(() => {
                         window.location.href = '/Profile';
