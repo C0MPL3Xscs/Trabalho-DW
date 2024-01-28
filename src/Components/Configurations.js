@@ -31,7 +31,7 @@ function Configurations() {
     const changeName = async () => {
         try {
             const response = await fetch(`https://localhost:7192/api/users/changeName?id=${userId}&newName=${newName}`, {
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -81,7 +81,7 @@ function Configurations() {
     const checkPassword = async () => {
         try {
             const response = await fetch(`https://localhost:7192/api/users/checkPassword?id=${userId}&password=${prevPassword}`, {
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 }
