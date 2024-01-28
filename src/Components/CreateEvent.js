@@ -50,7 +50,7 @@ function CreateEvent() {
 
     const createEvent = async () => {
         try {
-            const url = `https://localhost:7192/api/events/createEvent?id=${parseInt(userId)}&eventName=${eventName}&eventDate=${eventDate}&eventLocation=${eventLocation}&endDate=${eventEndDate}&eventDesc=${eventDescription}&imgURL=${eventImageURL}&isPrivate=${eventIsPrivate}&maxParticipants=${parseInt(maxParticipants)}`;
+            const url = `https://localhost:7192/api/events/createEvent?id=${parseInt(userId)}&title=${eventName}&eventDate=${eventDate}&eventLocation=${eventLocation}&eventEndDate=${eventEndDate}&eventDescription=${eventDescription}&eventImageURL=${eventImageURL}&eventIsPrivate=${eventIsPrivate}&maxPart=${parseInt(maxParticipants)}`;
             const response = await fetch(url);
 
             if (response.ok) {

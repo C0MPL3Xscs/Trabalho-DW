@@ -1,6 +1,6 @@
 import "./User.css";
 import React, { useEffect, useState } from "react";
-import Logo from "../UserLogo.png";
+import Logo from "../Assets/UserLogo.png";
 import banner from "../Assets/banner.jpg";
 import Event from "./Event.js";
 
@@ -42,7 +42,7 @@ function ProfilePage() {
     return (
         <div className="bigContainer">
             <img className="banner" src={banner} alt="Event Image" />
-            <img className="logo" src={Logo} alt="Event Image" />
+            <img className="logo" src="https://th.bing.com/th/id/R.c3631c652abe1185b1874da24af0b7c7?rik=XBP%2fc%2fsPy7r3HQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-user-icon-circled-user-icon-2240.png&ehk=z4ciEVsNoCZtWiFvQQ0k4C3KTQ6wt%2biSysxPKZHGrCc%3d&risl=&pid=ImgRaw&r=0"/>
             <h1>{name}</h1><br></br><br></br><br></br>
             <h1>YOUR EVENTS:</h1>
             {eventIds.map((id) => (

@@ -56,7 +56,7 @@ function Configurations() {
     const changePassword = async () => {
         try {
             const response = await fetch(`https://localhost:7192/api/users/changePassword?id=${userId}&newPassword=${newPassword}`, {
-                method: 'POST',
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 }
